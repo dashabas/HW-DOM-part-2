@@ -18,7 +18,7 @@ btn.addEventListener('click', () => {
 })
 
 function figureColor() {
-    if (figureChosen === '') {
+    if (figureChosen === '.oval') {
         figure.style.background = 'transparent';
     } else {
         figure.style.background = color;
