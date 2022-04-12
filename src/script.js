@@ -1,29 +1,25 @@
 const figure = document.querySelector('.figure');
 const figureSelect = document.querySelector('#figure_select');
-
 let figureChosen = '';
+
 figureSelect.addEventListener('change', (event) => {
     figureChosen = event.target.value;
     figure.className = figureChosen;
-    figureColor();
+    changeFigureColor(colorChoice.value);
 })
 
-const btn = document.querySelector('.btn');
+const applyColorBtn = document.querySelector('.apply_color_btn');
 const colorChoice = document.querySelector('#color');
-let color = '#000000';
 
-btn.addEventListener('click', () => {
-    color = colorChoice.value;
-    figureColor();
+applyColorBtn.addEventListener('click', () => {
+    changeFigureColor(colorChoice.value);
 })
 
-function figureColor() {
+function changeFigureColor(color = '#000000') {
     if (figureChosen === '.oval') {
         figure.style.background = 'transparent';
     } else {
         figure.style.background = color;
     }
 }
-
-
 
